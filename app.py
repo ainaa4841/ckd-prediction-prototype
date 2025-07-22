@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-from backend.predict import load_model, make_prediction
+from predict import load_model, make_prediction
 
 st.title("🩺 Chronic Kidney Disease Risk Predictor")
 
