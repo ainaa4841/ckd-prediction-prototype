@@ -13,7 +13,7 @@ bmi = st.number_input("BMI")
 smoker = st.selectbox("Smoker", ["No", "Yes"]) == "Yes"
 obese = st.selectbox("Obese", ["No", "Yes"]) == "Yes"
 activity = st.selectbox("Activity Level", ["Sedentary (1/2)", "Active (3+)"]) == "Active (3+)"
-fam_hyp = st.selectbox("Family History of Hypertension", ["No", "Yes"]) == "Yes"
+fam_htn = st.selectbox("Family History of Hypertension", ["No", "Yes"]) == "Yes"
 fam_db = st.selectbox("Family History of Diabetes", ["No", "Yes"]) == "Yes"
 sbp = st.number_input("Systolic Blood Pressure (SBP)")
 dbp = st.number_input("Diastolic Blood Pressure (DBP)")
