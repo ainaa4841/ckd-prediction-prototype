@@ -22,11 +22,24 @@ tchol = st.number_input("Total Cholesterol")
 ldl = st.number_input("LDL")
 hdl = st.number_input("HDL")
 
-if st.button("Predict"):
+if st.button("🔍 Predict"):
     model = load_model()
-    input_data = np.array([[
-        age, int(female), bmi, int(smoker), int(obese), int(activity),
-        int(fam_hyp), int(fam_db), sbp, dbp, int(anemia), tchol, ldl, hdl
+
+    input_data = np.array([[ 
+        age,
+        1 if female == "Female" else 0,
+        bmi,
+        1 if smoker == "Yes" else 0,
+        1 if obese == "Yes" else 0,
+        1 if activity == "Yes" else 0,
+        1 if fam_htn == "Yes" else 0,
+        1 if fam_dm == "Yes" else 0,
+        sbp,
+        dbp,
+        1 if anemia == "Yes" else 0,
+        total_chol,
+        ldl,
+        hdl
     ]])
 
     prediction = make_prediction(model, input_data)
@@ -35,4 +48,3 @@ if st.button("Predict"):
         st.error("🚨 Likely to have Chronic Kidney Disease. Please consult a doctor for future treatment.")
     else:
         st.success("✅ Risk of Chronic Kidney Disease is low. Maintain a healthy lifestyle.")
-
