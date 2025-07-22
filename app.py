@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-from utils import predict_ckd, log_to_gsheet
+from utils import predict_ckd
 
 st.title("🩺 Chronic Kidney Disease Risk Predictor")
 
@@ -33,5 +33,3 @@ if st.button("Predict"):
         st.error("⚠️ Likely to have Chronic Kidney Disease. Please consult a doctor.")
     else:
         st.success("✅ Risk of CKD is low. Maintain a healthy lifestyle.")
-
-    log_to_gsheet(features.tolist()[0], int(result))
