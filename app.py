@@ -8,20 +8,20 @@ st.title("🩺 Chronic Kidney Disease Risk Predictor")
 st.markdown("Please enter the following medical information:")
 
 # Input fields
-age = st.number_input("Age", 0, 120)
-female = st.selectbox("Sex", ["Male", "Female"]) == "Female"
-bmi = st.number_input("BMI")
-smoker = st.selectbox("Smoker", ["No", "Yes"]) == "Yes"
-obese = st.selectbox("Obese", ["No", "Yes"]) == "Yes"
+age = st.number_input("Enter Age", 0, 120)
+female = st.selectbox("Gender (Male/Female)", ["Male", "Female"]) == "Female"
+bmi = st.number_input("Enter BMI")
+smoker = st.selectbox("Smoker (Choose Yes/No)", ["No", "Yes"]) == "Yes"
+obese = st.selectbox("Obese (Choose Yes/No)", ["No", "Yes"]) == "Yes"
 activity = st.selectbox("Activity Level", ["Sedentary (1/2)", "Active (3+)"]) == "Active (3+)"
-fam_htn = st.selectbox("Family History of Hypertension", ["No", "Yes"]) == "Yes"
-fam_dm = st.selectbox("Family History of Diabetes", ["No", "Yes"]) == "Yes"
-sbp = st.number_input("Systolic Blood Pressure (SBP)")
-dbp = st.number_input("Diastolic Blood Pressure (DBP)")
-anemia = st.selectbox("Anemia", ["No", "Yes"]) == "Yes"
-total_chol = st.number_input("Total Cholesterol")
-ldl = st.number_input("LDL")
-hdl = st.number_input("HDL")
+fam_htn = st.selectbox("Family History of Hypertension (Choose Yes/No)", ["No", "Yes"]) == "Yes"
+fam_dm = st.selectbox("Family History of Diabetes (Choose Yes/No)", ["No", "Yes"]) == "Yes"
+sbp = st.number_input("Systolic Blood Pressure (mmHG)")
+dbp = st.number_input("Diastolic Blood Pressure (mmHG)")
+anemia = st.selectbox("Anemia (Choose Yes/No)", ["No", "Yes"]) == "Yes"
+total_chol = st.number_input("Total Cholesterol (mg/dL)")
+ldl = st.number_input("Low-Density Lipoprotein (mg/dL)")
+hdl = st.number_input("High-Density Lipoprotein (mg/dL)")
 
 # Predict button
 if st.button("🔍 Predict"):
