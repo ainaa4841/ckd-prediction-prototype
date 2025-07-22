@@ -26,6 +26,7 @@ hdl = st.number_input("High-Density Lipoprotein (mg/dL)")
 # Predict button
 if st.button("🔍 Predict"):
     model = load_model()
+    scaler = load_scaler()
 
     input_data = np.array([[ 
         age,
@@ -44,7 +45,7 @@ if st.button("🔍 Predict"):
         hdl
     ]])
 
-    prediction = make_prediction(model, input_data)
+    prediction = make_prediction(model, scaler, input_data)
 
     if prediction == 1:
         st.error("🚨 Likely to have Chronic Kidney Disease. Please consult a doctor.")
