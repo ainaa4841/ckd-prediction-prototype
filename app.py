@@ -18,7 +18,7 @@ fam_dm = st.selectbox("Family History of Diabetes", ["No", "Yes"]) == "Yes"
 sbp = st.number_input("Systolic Blood Pressure (SBP)")
 dbp = st.number_input("Diastolic Blood Pressure (DBP)")
 anemia = st.selectbox("Anemia", ["No", "Yes"]) == "Yes"
-tchol = st.number_input("Total Cholesterol")
+total_chol = st.number_input("Total Cholesterol")
 ldl = st.number_input("LDL")
 hdl = st.number_input("HDL")
 
