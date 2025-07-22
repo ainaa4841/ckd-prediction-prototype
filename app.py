@@ -7,6 +7,7 @@ st.title("🩺 Chronic Kidney Disease Risk Predictor")
 
 st.markdown("Please enter the following medical information:")
 
+# Input fields
 age = st.number_input("Age", 0, 120)
 female = st.selectbox("Sex", ["Male", "Female"]) == "Female"
 bmi = st.number_input("BMI")
@@ -22,21 +23,22 @@ total_chol = st.number_input("Total Cholesterol")
 ldl = st.number_input("LDL")
 hdl = st.number_input("HDL")
 
+# Predict button
 if st.button("🔍 Predict"):
     model = load_model()
 
     input_data = np.array([[ 
         age,
-        1 if female == "Female" else 0,
+        int(female),
         bmi,
-        1 if smoker == "Yes" else 0,
-        1 if obese == "Yes" else 0,
-        1 if activity == "Yes" else 0,
-        1 if fam_htn == "Yes" else 0,
-        1 if fam_dm == "Yes" else 0,
+        int(smoker),
+        int(obese),
+        int(activity),
+        int(fam_htn),
+        int(fam_dm),
         sbp,
         dbp,
-        1 if anemia == "Yes" else 0,
+        int(anemia),
         total_chol,
         ldl,
         hdl
@@ -45,6 +47,6 @@ if st.button("🔍 Predict"):
     prediction = make_prediction(model, input_data)
 
     if prediction == 1:
-        st.error("🚨 Likely to have Chronic Kidney Disease. Please consult a doctor for future treatment.")
+        st.error("🚨 Likely to have Chronic Kidney Disease. Please consult a doctor.")
     else:
-        st.success("✅ Risk of Chronic Kidney Disease is low. Maintain a healthy lifestyle.")
+        st.success("✅ Low risk of Chronic Kidney Disease. Keep maintaining a healthy lifestyle!")
