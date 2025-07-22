@@ -2,9 +2,10 @@ import streamlit as st
 import numpy as np
 from predict import load_model, make_prediction
 
+st.set_page_config(page_title="Chronic Kidney Disease Prediction", layout="centered")
 st.title("🩺 Chronic Kidney Disease Risk Predictor")
 
-st.markdown("Enter your health data to check for CKD risk:")
+st.markdown("Please enter the following medical information:")
 
 age = st.number_input("Age", 0, 120)
 female = st.selectbox("Sex", ["Male", "Female"]) == "Female"
@@ -22,7 +23,8 @@ ldl = st.number_input("LDL")
 hdl = st.number_input("HDL")
 
 if st.button("Predict"):
-    features = np.array([[
+    model = load_model()
+    input_data = np.array([[
         age, int(female), bmi, int(smoker), int(obese), int(activity),
         int(fam_hyp), int(fam_db), sbp, dbp, int(anemia), tchol, ldl, hdl
     ]])
