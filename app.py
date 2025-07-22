@@ -27,9 +27,10 @@ if st.button("Predict"):
         int(fam_hyp), int(fam_db), sbp, dbp, int(anemia), tchol, ldl, hdl
     ]])
 
-    result = predict_ckd(features)
+    prediction = make_prediction(model, input_data)
 
-    if result == 1:
-        st.error("⚠️ Likely to have Chronic Kidney Disease. Please consult a doctor.")
+    if prediction == 1:
+        st.error("🚨 Likely to have Chronic Kidney Disease. Please consult a doctor for future treatment.")
     else:
-        st.success("✅ Risk of CKD is low. Maintain a healthy lifestyle.")
+        st.success("✅ Risk of Chronic Kidney Disease is low. Maintain a healthy lifestyle.")
+
