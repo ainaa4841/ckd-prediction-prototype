@@ -3,7 +3,7 @@ import numpy as np
 from predict import load_model, load_scaler, make_prediction
 
 st.set_page_config(page_title="Chronic Kidney Disease Prediction", layout="centered")
-st.title("🩺 Chronic Kidney Disease Risk Predictor")
+st.title("🩺 Chronic Kidney Disease Prediction")
 
 st.markdown("Please enter the following medical information:")
 
